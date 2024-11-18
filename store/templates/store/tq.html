@@ -1,0 +1,22 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+
+
+<img  class=tq src="{% static 'images/thankyou.jpg' %}" alt="">
+<a class="btn btn-outline-success" href="{% url 'store' %} ">&#x2190;  Home</a>
+
+<script type="text/javascript">
+    window.onload = function() {
+        // Replace the current history state with the Thank You page so that the back button doesn't lead to the checkout
+        history.replaceState(null, null, location.href);
+
+        // Prevent going back to the checkout page by checking for popstate event
+        window.onpopstate = function(event) {
+            window.location.href = "{% url 'store' %}";  // Redirect to the store page if back is pressed
+        };
+ // Redirect to store if back is pressed
+        
+    }
+</script>
+{% endblock content %}

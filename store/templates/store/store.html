@@ -1,0 +1,51 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<!-- <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+<img src="{% static 'images/cartlogo.png' %}"> -->
+
+<!-- <h3>Store</h3> -->
+
+<img class="banner" src="{% static 'images/banner.png' %}" alt="banner">
+
+<div class="row">
+    {% for product in products %}
+    <div class="col-lg-4">
+        <img class="thumbnail" src="{{product.imageURL}}" alt="item">
+        <div class="box-element product">
+            <h6><strong>{{product.name}}</strong></h6>
+            <hr>
+            <button data-product="{{product.id}}" data-action="add"   class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+            <a class="btn btn-outline-success" href="{{product.imageURL}}">View</a>
+              <h4 style="display: inline-block;"><strong>Rs.{{product.price|floatformat:2}}</strong></h4>
+
+        </div>
+    </div>
+
+    <!-- <div class="col-lg-4">
+        <img class="thumbnail" src="{% static 'images/sample.png' %}" alt="item">
+        <div class="box-element product">
+            <h6><strong>product</strong></h6>
+            <hr>
+            <button class="btn btn-outline-secondary add-btn">Add to Cart</button>
+            <a class="btn btn-outline-success" href="#">View</a>
+             <h4 style="display:inline-block; float:right">$15</h4>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <img class="thumbnail" src="{% static 'images/sample.png' %}" alt="item">
+        <div class="box-element product">
+            <h6><strong>product</strong></h6>
+            <hr>
+            <button class="btn btn-outline-secondary add-btn">Add to Cart</button>
+            <a class="btn btn-outline-success" href="#">View</a>
+             <h4 style="display:inline-block;float: right;">$20</h4>
+
+        </div>
+    </div> -->
+    
+{% endfor %}
+</div>
+{% endblock content %}

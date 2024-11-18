@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        background-color: rgb(121, 142, 142);
+      }
+      .main-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 95vh;
+        flex-direction: column;
+      }
+      .main-container form {
+        height: 60%;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        background-color: cadetblue;
+        border-radius: 2rem;
+        box-shadow: 0px 0px 4px 5px rgba(126, 110, 110, 0.5);
+      }
+      .main-container form > * {
+        padding: 1rem;
+        margin: 1rem;
+      }
+      .main-container h2 {
+        margin: 0;
+      }
+      label {
+        font-size: 1.25rem;
+        font-weight: 700;
+      }
+      input {
+        height: 2rem;
+        font-size: 1rem;
+      }
+
+      .display {
+        margin-top: 0.5rem;
+      }
+    </style>
+    <title>E-Commerce</title>
+  </head>
+  <body>
+    <div class="login">
+      <div class="main-container">
+        <form action="{% url 'store' %}" method="post">
+          {% csrf_token %}
+          <h2>LOG IN</h2>
+          <div class="un">
+            <label for="username">Username: </label>
+            <input type="text" name="username" id="username" />
+          </div>
+          <div class="pw">
+            <label for="password">Password: </label>
+            <input type="password" name="password" id="password" />
+          </div>
+          <div>
+            <input type="submit" value="LOGIN" />
+          </div>
+        </form>
+        <div class="display">
+          <p>Accepted Username and passwords</p>
+          <ul>
+            <li><b>karan</b> - karan</li>
+            <li><b>admin</b> - admin</li>
+            <li><b>store</b> - store</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
